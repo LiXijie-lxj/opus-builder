@@ -1,6 +1,6 @@
 [general]
 libraries = ["libopus", "libogg", "libopusenc", "libopusfile"]
-platforms = ["ios-sim", "ios", "macos", "android"]
+platforms = ["android"]
 keep_intermediate = false
 repo_prefix = "https://gitlab.xiph.org/xiph/"
 
@@ -10,7 +10,7 @@ repo_path = ["repos"]
 
 [build]
 make_concurrent_jobs = 8
-cflags = "-O3 -g -DNDEBUG -ffast-math"
+cflags = "-O0 -g -DNDEBUG -ffast-math -U_FILE_OFFSET_BITS"
 ldflags = "-flto -fPIE"
 configure_flags = ["--with-pic"]
 
@@ -32,7 +32,7 @@ lib_type = "static"
 [platforms.android]
 native_api_level = 21
 ndk_path = "/usr/local/NDK-r28c"
-archs = ["arm64-v8a", "armeabi-v7a", "x86_64", "x86"]
+archs = ["armeabi-v7a"]
 lib_type = "shared"
 
 [platforms.harmony]
