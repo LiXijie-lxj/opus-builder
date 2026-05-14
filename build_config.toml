@@ -52,4 +52,5 @@ version = "v0.2.1"
 
 [libraries.libopusfile]
 version = "v0.12"
+cflags = "-D_FILE_OFFSET_BITS=32"
 configure_flags = ["--disable-http", "--disable-examples", "--disable-doc"]
